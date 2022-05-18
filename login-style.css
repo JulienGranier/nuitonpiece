@@ -1,0 +1,12 @@
+body.login { 
+	background-image: url('assets/img/bg-poster.jpg'); 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+	background-position: center;
+	background-size: cover;
+}
+.login h1 a {
+	background-image: url('assets/img/logo_one_piece.svg');
+	width: 240px;
+	background-size: 100%;
+}

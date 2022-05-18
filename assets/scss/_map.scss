@@ -1,0 +1,148 @@
+body.page-template-google-map {
+	#section1 {
+		padding-top: 30px;
+		padding-bottom: 40px;
+		height: 500px;
+		background: #F5FBFF url("../img/pages/visuel-storelocator.jpg");
+		@include media-breakpoint-up(md) {
+			height: 660px;
+		}
+		h1 {
+			margin-top: 0px;
+			@include media-breakpoint-up(md) {
+				margin-top: 60px;
+			}
+		}
+		
+		.help-text {
+			font-size: 1rem;
+			font-weight: 300;
+			margin-top: 40px;
+		}
+	}
+	#section2 {
+		padding: 20px 20px 50px 20px;
+		@include media-breakpoint-up(md) {
+			padding: 120px 0;
+		}
+		h3 {
+			transition: all 0.4s linear;
+			@include media-breakpoint-down(md) {
+				margin: 30px 0 0 0;
+				svg {
+					transform: rotate(180Deg);
+					transition: all 0.2s linear;
+					* {
+						fill:$primary;
+					}
+				}
+				&.on {
+					color:$gray;
+					svg {
+						transform: rotate(0Deg);
+						* {
+							fill:$gray;
+						}
+					}
+				}
+				
+			}
+		}
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			li {
+				padding: 0;
+				a {
+					padding: 5px 0px;
+					display: inline-block;
+					font-size: 1.25rem;
+					font-weight: 400;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+			&.triple {
+				@include media-breakpoint-up(md) {
+					columns: 3;
+				}
+			}
+		}
+		.accordion {
+			@include media-breakpoint-down(md) {
+				padding-top: 30px;
+				display: none;
+				&.on {
+					display: block;
+				}
+			}
+		}
+	}
+	#section3 {
+		h1 {
+			margin-bottom: 60px;
+		}
+		.left {
+			position: relative;
+			padding: 30px 20px;
+			@include media-breakpoint-up(md) {
+				padding: 60px 60px 90px 60px;
+			}
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				li {
+					padding: 0;
+					a {
+						padding: 5px 0px;
+						display: inline-block;
+						font-size: 1.25rem;
+						font-weight: 400;
+						text-decoration: none;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+		.map {
+			height: 860px;
+			width: 100%;
+		}
+		.infostore {
+			margin-bottom: 50px;
+			h3 {
+				@include media-breakpoint-up(md) {
+					margin-bottom: 15px;
+					line-height: 2rem;
+				}
+			}
+			p {
+				margin-bottom: 2px;
+				@include media-breakpoint-up(md) {
+					margin-bottom: 5px;
+					line-height: 1.75rem;
+					font-size: 1.25rem;
+				}
+			}
+		}
+		.link {
+			margin: 0 0 30px 0;
+			display: inline-block;
+			font-size: 1rem;
+			height: 30px;
+			line-height: 30px;
+			svg {
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 10px;
+			}
+		}
+		
+	}
+}
