@@ -7,13 +7,51 @@ body {
 	font-family: 'Heebo', sans-serif;
 	font-size: 1.250vw;
 	font-weight: 500;
-	
+
+	&.noscroll {
+		overflow-x: hidden;
+		overflow-y: hidden;
+	}
+
+	&.loaded {
+		.preload {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	&.animate {
+		#luffy {
+			animation-name: opacityon;
+			animation-fill-mode: forwards;
+			animation-duration: 500ms;
+			animation-delay: 300ms;
+		}
+		#zoro {
+			animation-name: opacityon;
+			animation-fill-mode: forwards;
+			animation-duration: 500ms;
+			animation-delay: 600ms;
+		}
+		#nami {
+			animation-name: opacityon;
+			animation-fill-mode: forwards;
+			animation-duration: 500ms;
+			animation-delay: 900ms;
+		}
+	}
+	@keyframes opacityon {
+  		from {opacity: 0;}
+  		to {opacity:1;}
+	}
+
 	&.home {
 		background: url("../img/carte-onepiece.jpg");
 		background-size: 100%;
 		
 		/* illustration */
 		#luffy {
+			opacity: 0;
 			width: 47.604vw;
 			left: -12vw;
 			top:10px;
@@ -22,6 +60,7 @@ body {
 			}
 		}
 		#nami {
+			opacity: 0;
 			width: 16.979vw;
 			right: 15vw;
 			top: 7.604vw;
@@ -30,6 +69,7 @@ body {
 			}
 		}
 		#zoro {
+			opacity: 0;
 			width: 29.115vw;
 			right: 0vw;
 			top:2.4vw;
@@ -39,22 +79,18 @@ body {
 		}
 	}
 	#box-inscription {
-		margin-bottom: 2vw;
-		margin-top: 2vw;
+		margin-bottom: 3vw;
+		margin-top: 3vw;
 		.text-center {
 			position: relative;
 			width:  39.844vw;
 			max-width: 765px;
-		}
-		svg {
-			width: 100%;
-			height: auto;
+			background-color: $white;
+			padding: 2vw 0;
+			border: 1px solid $black;
+			border-radius: 1vw;
 		}
 		.content {
-			position: absolute;
-			top: 2.8vw;
-			left: 0;
-			right: 0;
 			p {
 				margin: 0;
 			}
@@ -302,14 +338,53 @@ b, strong {
 	z-index: 2;
 	width: 10.938vw;
 	max-width: 210px;
-	padding: 1vw;
+	padding: 1vw 1vw 0 1vw;
 	background: $white;
 	border-radius: 1vw;
+	max-height: 3vw;
+	overflow: hidden;
+	transition: all 300ms linear;
+	cursor: pointer;
+
+	&.on {
+		max-height: 20vw;
+	}
+
+	.question {
+		padding: 1vw 1vw;
+		margin: 1vw -1vw -1vw -1vw;
+		background-color:$gray-200;
+		border-bottom-left-radius: 1vw;
+		border-bottom-right-radius: 1vw;
+
+		a {
+			display: block;
+			text-align: center;
+			margin-bottom: 1vw;
+		}
+	}
 	
 	p {
 		text-align: center;
 	}
 	.btn {
 		width: 100%;
+		margin-top:1vw;
+	}
+}
+
+.preload {
+	position:fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom:0;
+	background: blue;
+	z-index: 9;
+	img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
 	}
 }

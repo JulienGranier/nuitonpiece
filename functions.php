@@ -66,8 +66,8 @@ function mlbr_hideitems() {
 	if ($roles[0]=='author') {	
    		
 		remove_menu_page( 'edit.php' );
-		remove_menu_page( 'upload.php' );
     	remove_menu_page( 'tools.php' );
+    	remove_menu_page( 'upload.php' );
 	
 	}
 	
@@ -403,4 +403,23 @@ function nameDep($cp) {
 
     return $nom_dept[$cp];
 	
+}
+
+// dashborad
+
+function wpdocs_add_dashboard_widgets() {
+    wp_add_dashboard_widget( 'dashboard_widget1', 'Bienvenue sur votre espace de gestion', 'dashboard_widget_function1' );
+    wp_add_dashboard_widget( 'dashboard_widget2', 'Besoin d\'aide', 'dashboard_widget_function2' );
+    wp_add_dashboard_widget( 'dashboard_widget3', 'Téléchargements', 'dashboard_widget_function3' );
+}
+add_action( 'wp_dashboard_setup', 'wpdocs_add_dashboard_widgets' );
+ 
+function dashboard_widget_function1( $post, $callback_args ) {
+    echo 'Pour administrer votre page, <a href="https://www.nuitonepiece.com/wp-admin/edit.php?post_type=librairie">cliquez ici</a>';
+}
+function dashboard_widget_function2( $post, $callback_args ) {
+    echo '<a href="#">Suivez le tuto</a> pour bien remplir votre page';
+}
+function dashboard_widget_function3( $post, $callback_args ) {
+    echo '<ul><li><a href="#">Kit d\'animation</a></li><li><a href="#">Kit de communication</a></li><li><a href="#">Kit d\'exposition</a></li></ul>';
 }

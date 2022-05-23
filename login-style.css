@@ -6,7 +6,8 @@ body.login {
 	background-size: cover;
 }
 .login h1 a {
-	background-image: url('assets/img/logo_one_piece.svg');
-	width: 240px;
+	background-image: url('assets/img/logo-onpiece.svg');
+	width: 310px;
+	height: 170px;
 	background-size: 100%;
 }

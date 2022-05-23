@@ -61,6 +61,15 @@ jQuery( document ).ready(function() {
 			}, 300);
 	})
 	
+	/* BTN LIBRAIRE */
+
+	jQuery('.libraire')
+		.mouseenter ( function () {
+			jQuery(this).toggleClass('on');
+		})
+		.mouseleave ( function () {
+			jQuery(this).toggleClass('on');
+		});
 	
 	/* STORE LOCATOR */	
 	
@@ -114,5 +123,9 @@ jQuery( document ).ready(function() {
 		}
 		
 	}
+
+	/* LOADING HP */
+
+	jQuery('body').addClass('loaded').removeClass('noscroll').addClass('animate');
 	
 });
