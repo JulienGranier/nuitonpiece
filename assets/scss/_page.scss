@@ -68,7 +68,7 @@ body {
 			transform: translateX(-59%);
 			@include media-breakpoint-up(lg) {
 				width: 47.604vw;
-				top: 10px;
+				top: 4.4vw;
 				left: -12vw;
 				transform: translateX(0);
 			}
@@ -85,7 +85,7 @@ body {
 			@include media-breakpoint-up(lg) {
 				width: 16.979vw;
 				right: 15vw;
-				top: 7.604vw;
+				top: 9.6vw;
 				transform: translateX(0);
 			}
 			img {
@@ -99,7 +99,7 @@ body {
 				display: block;
 				width: 29.115vw;
 				right: 0vw;
-				top:2.4vw;
+				top: 3.6vw;
 			}
 			img {
 				max-width: 559px;
@@ -109,7 +109,7 @@ body {
 	#box-inscription {
 		margin: 50px 10px; 
 		@include media-breakpoint-up(lg) {
-			margin: 3vw 0;
+			margin: 3vw 0 0;
 		}
 		.text-center {
 			position: relative;
@@ -120,7 +120,6 @@ body {
 			border-radius: 20px;
 			@include media-breakpoint-up(lg) {
 				width:  39.844vw;
-				max-width: 765px;
 				padding: 2vw 0;
 				border-radius: 1vw;
 				padding: 2vw 0;
@@ -213,7 +212,7 @@ a {
 	margin-top: 30px;
 	@include media-breakpoint-up(lg) {
 		margin-top: 1vw;
-		margin-bottom: 1vw;
+		margin-bottom: 2vw;
 	}
 	div {
 		margin: 1px;
@@ -271,7 +270,7 @@ b, strong {
 	margin: auto;
 	@include media-breakpoint-up(lg) {
 		width: 22.917vw;
-		max-width: 440px;
+		max-width: 880px;
 	}
 	
 	form {
@@ -289,7 +288,7 @@ b, strong {
 			font-size: 16px;
 			@include media-breakpoint-up(lg) {
 				font-size: 1.042vw;
-				adding-left: 1.5vw;
+				padding-left: 1.5vw;
 				height: 3.750vw;
 				line-height: 3.750vw;
 				border-radius: 2vw;
@@ -420,8 +419,8 @@ b, strong {
 
 /* MARGIN */
 .py-50 {
-	padding-top: 7vw;
-	padding-bottom: 7vw;
+	padding-top: 4vw;
+	padding-bottom: 4vw;
 }
 .mt-3vw {
 	margin-top: 3vw;
@@ -470,7 +469,7 @@ b, strong {
 		line-height: 2.604vw;
 		font-size: 0.938vw;
 		border-radius: 2vw;
-		padding: 0 1vw;
+		padding: 0 1.5vw;
 	}
 }
 .btn-primary {
@@ -534,6 +533,9 @@ b, strong {
 			text-align: center;
 			margin-bottom: 1vw;
 			color: $black;
+			&:hover {
+				color: $primary;
+			}
 		}
 	}
 	

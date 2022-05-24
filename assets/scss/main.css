@@ -6467,7 +6467,7 @@ body {
       @media (min-width: 992px) {
         body.home #luffy {
           width: 47.604vw;
-          top: 10px;
+          top: 4.4vw;
           left: -12vw;
           transform: translateX(0); } }
       body.home #luffy img {
@@ -6482,7 +6482,7 @@ body {
         body.home #nami {
           width: 16.979vw;
           right: 15vw;
-          top: 7.604vw;
+          top: 9.6vw;
           transform: translateX(0); } }
       body.home #nami img {
         max-width: 326px; }
@@ -6494,14 +6494,14 @@ body {
           display: block;
           width: 29.115vw;
           right: 0vw;
-          top: 2.4vw; } }
+          top: 3.6vw; } }
       body.home #zoro img {
         max-width: 559px; }
   body #box-inscription {
     margin: 50px 10px; }
     @media (min-width: 992px) {
       body #box-inscription {
-        margin: 3vw 0; } }
+        margin: 3vw 0 0; } }
     body #box-inscription .text-center {
       position: relative;
       width: 100%;
@@ -6512,7 +6512,6 @@ body {
       @media (min-width: 992px) {
         body #box-inscription .text-center {
           width: 39.844vw;
-          max-width: 765px;
           padding: 2vw 0;
           border-radius: 1vw;
           padding: 2vw 0; } }
@@ -6588,7 +6587,7 @@ a {
   @media (min-width: 992px) {
     #compte {
       margin-top: 1vw;
-      margin-bottom: 1vw; } }
+      margin-bottom: 2vw; } }
   #compte div {
     margin: 1px;
     width: 78px;
@@ -6639,7 +6638,7 @@ b, strong {
   @media (min-width: 992px) {
     .pave-nl {
       width: 22.917vw;
-      max-width: 440px; } }
+      max-width: 880px; } }
   .pave-nl form {
     position: relative; }
     .pave-nl form .form-control {
@@ -6656,7 +6655,7 @@ b, strong {
       @media (min-width: 992px) {
         .pave-nl form .form-control {
           font-size: 1.042vw;
-          adding-left: 1.5vw;
+          padding-left: 1.5vw;
           height: 3.750vw;
           line-height: 3.750vw;
           border-radius: 2vw;
@@ -6776,8 +6775,8 @@ b, strong {
 
 /* MARGIN */
 .py-50 {
-  padding-top: 7vw;
-  padding-bottom: 7vw; }
+  padding-top: 4vw;
+  padding-bottom: 4vw; }
 
 .mt-3vw {
   margin-top: 3vw; }
@@ -6818,7 +6817,7 @@ b, strong {
   line-height: 50px;
   font-size: 18px;
   border-radius: 20px;
-  padding: 0 1vw;
+  padding: 0 10px;
   text-transform: uppercase; }
   @media (min-width: 992px) {
     .btn {
@@ -6826,7 +6825,7 @@ b, strong {
       line-height: 2.604vw;
       font-size: 0.938vw;
       border-radius: 2vw;
-      padding: 0 10px; } }
+      padding: 0 1.5vw; } }
 
 .btn-primary {
   color: #fff; }
@@ -6881,6 +6880,8 @@ b, strong {
       text-align: center;
       margin-bottom: 1vw;
       color: #000; }
+      .libraire .question a:hover {
+        color: #E16307; }
   .libraire p {
     text-align: center; }
   .libraire .btn {
