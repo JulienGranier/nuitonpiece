@@ -2,6 +2,39 @@ var map;
 var zoom = 7;
 var poscenter = { lat: 46.52863469527167, lng: 2.43896484375 };
 
+var mobilew = 992;
+
+function isMobile () {
+	var vw = document.documentElement.clientWidth;
+	
+	if ( vw < mobilew) {
+		jQuery('body').addClass('mobile');
+	} else {
+		jQuery('body').removeClass('mobile');
+	}
+}
+
+function delay(milliseconds){
+    return new Promise(resolve => {
+        setTimeout(resolve, milliseconds);
+    });
+}
+
+async function calculPurcent () {
+	
+	var cpt = parseInt(1);
+	var val = parseInt(0);
+	
+	while (cpt <= 100) {
+		val = Math.floor(Math.random() * 10);
+		cpt = parseInt(cpt) + parseInt(val);
+		if (cpt > 100) { cpt = 100; }
+		await delay(80);
+		jQuery('.preload .purcent span').html(cpt);
+	}
+	
+}
+
 function compteur () {
 	
 	var date_actuelle = new Date();
@@ -33,6 +66,9 @@ function compteur () {
 
 jQuery( document ).ready(function() {
 	
+	/* INIT */
+	isMobile();
+	
 	/*  COMPTE A REBOURS */
 	
 	var car = jQuery('#compte');
@@ -62,14 +98,22 @@ jQuery( document ).ready(function() {
 	})
 	
 	/* BTN LIBRAIRE */
-
-	jQuery('.libraire')
-		.mouseenter ( function () {
-			jQuery(this).toggleClass('on');
-		})
-		.mouseleave ( function () {
-			jQuery(this).toggleClass('on');
+	
+	if ( jQuery('body').hasClass('mobile') ) {
+		jQuery('.libraire').click(function () {
+			$(this).addClass('on');
 		});
+	} else {
+		jQuery('.libraire')
+			.mouseenter ( function () {
+				jQuery(this).toggleClass('on');
+			})
+			.mouseleave ( function () {
+				jQuery(this).toggleClass('on');
+			});
+	}
+
+	
 	
 	/* STORE LOCATOR */	
 	
@@ -125,7 +169,18 @@ jQuery( document ).ready(function() {
 	}
 
 	/* LOADING HP */
+	
+	calculPurcent ();
 
-	jQuery('body').addClass('loaded').removeClass('noscroll').addClass('animate');
+	setTimeout(function () {
+		
+		jQuery('body').addClass('loaded').removeClass('noscroll').addClass('animate');
+		
+	}, 2000)
+	
+	
+	jQuery(window).on('resize', function () {
+		isMobile();
+	})
 	
 });

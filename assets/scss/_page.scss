@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap');
 
 $borderwidth : 5px;
+$borderwidthm : 3px;
 body {
 	
-	padding: $borderwidth;
+	padding: $borderwidthm;
 	font-family: 'Heebo', sans-serif;
-	font-size: 1.250vw;
+	font-size: 20px;
 	font-weight: 500;
+	overflow-x: hidden;
+	@include media-breakpoint-up(lg) {
+		font-size: 1.250vw;
+		padding: $borderwidth;
+	}
 
 	&.noscroll {
 		overflow-x: hidden;
@@ -46,62 +52,118 @@ body {
 	}
 
 	&.home {
-		background: url("../img/carte-onepiece.jpg");
-		background-size: 100%;
+		background: url("../img/carte-onepiece.jpg") top center;
+		background-size: 1950px;
+		
+		@include media-breakpoint-up(lg) {
+			background-size: 100%;
+		}
 		
 		/* illustration */
 		#luffy {
 			opacity: 0;
-			width: 47.604vw;
-			left: -12vw;
-			top:10px;
+			width: 615px;
+			left: 50%;
+			top: 345px;
+			transform: translateX(-59%);
+			@include media-breakpoint-up(lg) {
+				width: 47.604vw;
+				top: 10px;
+				left: -12vw;
+				transform: translateX(0);
+			}
 			img {
 				max-width: 914px;
 			}
 		}
 		#nami {
 			opacity: 0;
-			width: 16.979vw;
-			right: 15vw;
-			top: 7.604vw;
+			width: 265px;
+			right: 50%;
+			top: 345px;
+			transform: translateX(108%);
+			@include media-breakpoint-up(lg) {
+				width: 16.979vw;
+				right: 15vw;
+				top: 7.604vw;
+				transform: translateX(0);
+			}
 			img {
 				max-width: 326px;
 			}
 		}
 		#zoro {
 			opacity: 0;
-			width: 29.115vw;
-			right: 0vw;
-			top:2.4vw;
+			display: none;
+			@include media-breakpoint-up(lg) {
+				display: block;
+				width: 29.115vw;
+				right: 0vw;
+				top:2.4vw;
+			}
 			img {
 				max-width: 559px;
 			}
 		}
 	}
 	#box-inscription {
-		margin-bottom: 3vw;
-		margin-top: 3vw;
+		margin: 50px 10px; 
+		@include media-breakpoint-up(lg) {
+			margin: 3vw 0;
+		}
 		.text-center {
 			position: relative;
-			width:  39.844vw;
-			max-width: 765px;
+			width:  100%;
 			background-color: $white;
-			padding: 2vw 0;
+			padding: 30px 24px;
 			border: 1px solid $black;
-			border-radius: 1vw;
+			border-radius: 20px;
+			@include media-breakpoint-up(lg) {
+				width:  39.844vw;
+				max-width: 765px;
+				padding: 2vw 0;
+				border-radius: 1vw;
+				padding: 2vw 0;
+			}
 		}
 		.content {
 			p {
 				margin: 0;
+				&:first {
+					font-size: 27px;
+					@include media-breakpoint-up(lg) {
+						font-size: 1.25vw;
+					}
+				}
+			}
+		}
+		.btn {
+			@include media-breakpoint-down(lg) {
+				width: 210px;
+				margin: 20px auto 0 auto;
+				font-size: 18px;
+				height: 50px;
+				line-height: 50px;
+				border-radius: 20px;
 			}
 		}
 		
 	}
 }
+a {
+	color: $white;
+	&:hover {
+		color: $primary;
+	}
+}
 #logo {
-	width: 16.146vw;
+	width: 135px;
 	height: auto;
-	max-width: 310px;
+	
+	@include media-breakpoint-up(lg) {
+		width: 16.146vw;
+		max-width: 310px;
+	}
 }
 #logo-25 {
 	width: 9.375vw;
@@ -117,10 +179,13 @@ body {
 }
 .bordered {
 	position: fixed;
-	border: $borderwidth solid $black;
+	border: $borderwidthm solid $black;
 	overflow-x: hidden;
 	overflow-y: auto;
 	z-index: 4;
+	@include media-breakpoint-up(lg) {
+		border: $borderwidth solid $black;
+	}
 	&.top {
 		top: 0;
 		left: 0;
@@ -144,17 +209,29 @@ body {
 }
 
 #compte {
+	margin-bottom: 800px;
+	margin-top: 30px;
+	@include media-breakpoint-up(lg) {
+		margin-top: 1vw;
+		margin-bottom: 1vw;
+	}
 	div {
-		margin: 5px;
-		padding: 0 25px;
-		width: 9.375vw;
-		height: 9.375vw;
-		line-height: 9.375vw;
+		margin: 1px;
+		width: 78px;
+		height: 78px;
+		line-height: 78px;
 		background: url("../img/compteur.svg");
 		background-size: 100%;
 		text-align: center;
 		color: $white;
-		font-size: 0.781vw;
+		font-size: 10px;
+		@include media-breakpoint-up(lg) {
+			width: 9.375vw;
+			height: 9.375vw;
+			line-height: 9.375vw;
+			font-size: 0.781vw;
+			margin: 5px;
+		}
 		p {
 			margin: 0;
 			display: inline-block;
@@ -162,14 +239,22 @@ body {
 			line-height: normal;
 		}	
 		span {
-			font-size: 2.813vw;
+			font-size: 26px;
+			line-height: 26px;
 			letter-spacing: 0px;
 			display: block;
-			line-height: 0.8;
+			@include media-breakpoint-up(lg) {
+				line-height: 0.8;
+				font-size: 2.813vw;
+			}
 		}
 		i {
 			font-style: normal;
 			display: block;
+			line-height: 10px;
+			@include media-breakpoint-up(lg) {
+				line-height: 1;
+			}
 		}
 	}
 }
@@ -181,23 +266,35 @@ b, strong {
 /* NL */
 
 .pave-nl {
-	width: 22.917vw;
-	max-width: 440px;
+	width: 100%;
+	max-width: 330px;
 	margin: auto;
+	@include media-breakpoint-up(lg) {
+		width: 22.917vw;
+		max-width: 440px;
+	}
 	
 	form {
 		position: relative;
 		.form-control {
 			width: 100%;
-			height: 3.750vw;
-			line-height: 3.750vw;
+			height: 62px;
+			line-height: 62px;
 			border: 1px solid #FFFFFF;
 			background: transparent;
-			border-radius: 2vw;
-			padding-left: 1.5vw;
-			padding-right: 9vw;
+			border-radius: 20px;
+			padding-left: 35px;
+			padding-right: 12px;
 			color: $white;
-			font-size: 1.042vw;
+			font-size: 16px;
+			@include media-breakpoint-up(lg) {
+				font-size: 1.042vw;
+				adding-left: 1.5vw;
+				height: 3.750vw;
+				line-height: 3.750vw;
+				border-radius: 2vw;
+				padding-right: 9vw;
+			}
 			&::placeholder {
 				color: $white;
 			}
@@ -207,8 +304,17 @@ b, strong {
 			background: white;
 			color: black;
 			top: 50%;
-			right: 0.7vw;
+			right: 12px;
 			transform: translateY(-50%);
+			@include media-breakpoint-down(lg) {
+				width: 137px;
+				height: 36px;
+				line-height: 36px;
+				font-size: 16px;
+			}
+			@include media-breakpoint-up(lg) {
+				right: 0.7vw;
+			}
 			&:hover {
 				background-color: $primary;
 				color: $white;
@@ -228,9 +334,14 @@ b, strong {
 	display: none;
 	line-height: 1.5;
 	z-index: 5;
-	padding: 1vw;
-	width: 18.229vw;
-	max-width: 350px;
+	padding: 10px;
+	width: 90%;
+	max-width: 320px;
+	@include media-breakpoint-up(lg) {
+		padding: 1vw;
+		width: 18.229vw;
+		max-width: 350px;
+	}
 	&:before {
 		width: 0;
 		height: 0;
@@ -250,36 +361,60 @@ b, strong {
 
 /* FONT STYLE */
 .fs14 {
-	font-size: 0.729vw;
-	line-height: 1.1;
+	font-size: 14px;
+	line-height: 25px;
 	font-weight: 400;
+	@include media-breakpoint-up(lg) {
+		font-size: 0.729vw;
+		line-height: 1.1;
+	}
 }
 .fs16 {
 	font-size: 0.833vw;
 	line-height: 1.1;
 	font-weight: 400;
+	@include media-breakpoint-up(lg) {
+		font-size: 0.833vw;
+		line-height: 1.1;
+	}
 }
 .fs18 {
-	font-size: 0.938vw;
-	line-height: 1.2;
+	font-size: 14px;
+	line-height: 1;
 	font-weight: 400;
+	@include media-breakpoint-up(lg) {
+		font-size: 0.938vw;
+		line-height: 1.2;
+	}
 }
 .fs20 {
-	font-size: 1.042vw;
-	line-height: 1.2;
+	font-size: 18px;
+	line-height: 22px;
 	font-weight: 400;
+	@include media-breakpoint-up(lg) {
+		font-size: 1.042vw;
+		line-height: 1.2;
+	}
 }
 .fs24 {
-	font-size: 1.250vw;
-	line-height: 1.3;
+	font-size: 20px;
+	line-height: 32px;
+	@include media-breakpoint-up(lg) {
+		font-size: 1.250vw;
+		line-height: 1.3;
+	}
 }
 .fs27 {
 	font-size: 1.406vw;
 	line-height: 1.35;
 }
 .fs30 {
-	font-size: 1.563vw;
-	line-height: 1.5;
+	font-size: 24px;
+	line-height: 35px;
+	@include media-breakpoint-up(lg) {
+		font-size: 1.563vw;
+		line-height: 1.5;
+	}
 }
 
 /* MARGIN */
@@ -291,14 +426,21 @@ b, strong {
 	margin-top: 3vw;
 }
 .mt-4vw {
-	margin-top: 4vw;
+	margin-top: 50px;
+	@include media-breakpoint-up(lg) {
+		margin-top: 4vw;
+	}
 }
 .mt-5vw {
 	margin-top: 5vw;
 }
 .my-1vw {
-	margin-top: 1vw;
-	margin-bottom: 1vw;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	@include media-breakpoint-up(lg) {
+		margin-top: 1vw;
+		margin-bottom: 1vw;
+	}
 }
 .my-2vw {
 	margin-top: 2vw;
@@ -316,12 +458,19 @@ b, strong {
 
 /* boutton */
 .btn {
-	height: 2.604vw;
-	line-height: 2.604vw;
-	font-size: 0.938vw;
-	border-radius: 2vw;
+	height: 50px;
+	line-height: 50px;
+	font-size: 18px;
+	border-radius: 20px;
 	padding: 0 1vw;
 	text-transform: uppercase;
+	@include media-breakpoint-up(lg) {
+		height: 2.604vw;
+		line-height: 2.604vw;
+		font-size: 0.938vw;
+		border-radius: 2vw;
+		padding: 0 10px;
+	}
 }
 .btn-primary {
 	color: $white;
@@ -333,21 +482,44 @@ b, strong {
 
 .libraire {
 	position: absolute;
-	top: 2vw;
-	right: 3vw;
+	top: 30px;
+	right: 30px;
 	z-index: 2;
-	width: 10.938vw;
+	width: 143px;
 	max-width: 210px;
-	padding: 1vw 1vw 0 1vw;
+	padding: 12px 10px 0 10px;
 	background: $white;
-	border-radius: 1vw;
-	max-height: 3vw;
+	border-radius: 10px;
+	max-height: 39px;
 	overflow: hidden;
 	transition: all 300ms linear;
 	cursor: pointer;
+	@include media-breakpoint-up(lg) {
+		top: 2vw;
+		right: 3vw;
+		width: 10.938vw;
+		max-width: 210px;
+		padding: 1vw 1vw 0 1vw;
+		border-radius: 1vw;
+		max-height: 3vw;
+	}
 
 	&.on {
-		max-height: 20vw;
+		
+		@include media-breakpoint-down(lg) {
+			max-height: 100vh;
+			max-width: 100vw;
+			width: 100%;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			overflow: auto;
+			position: fixed;
+		}
+		@include media-breakpoint-up(lg) {
+			max-height: 20vw;
+		}
 	}
 
 	.question {
@@ -369,7 +541,49 @@ b, strong {
 	}
 	.btn {
 		width: 100%;
-		margin-top:1vw;
+		margin-top: 1vw;
+	}
+	.btn-primary {
+		margin-top: 40px;
+		@include media-breakpoint-up(lg) {
+			margin-top: 1vw;
+		}
+	}
+}
+
+footer {
+	color: $white;
+	.bg-black {
+		padding-bottom: 2vw;
+	}
+	.glenat {
+		
+		display: block;
+		margin-top: 20px;
+		margin-bottom: 30px;
+		@include media-breakpoint-up(lg) {
+			margin-right: 4vw;
+			display: inline;
+		}
+	}
+	.rs {
+		margin: 20px 0 30px 0;
+		@include media-breakpoint-up(lg) {
+			margin: 0;
+		}
+		a {
+			margin: 0 10px;;
+			@include media-breakpoint-up(lg) {
+				margin: 0 0.5vw;
+			}
+			&:hover {
+				svg {
+					* {
+						fill: $primary;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -379,12 +593,36 @@ b, strong {
 	left: 0;
 	right: 0;
 	bottom:0;
-	background: blue;
+	background: #10bad4;
 	z-index: 9;
-	img {
+	.content {
+		color: $white;
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%,-50%);
+		text-align: center
 	}
+	.logo {
+		animation-name: bateau;
+		animation-duration: 1s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+	
+	.vague {
+		width: 150px;
+		margin: 20px auto;
+		display: block;
+		@include media-breakpoint-up(lg) {
+			width: 30vw;
+			margin: 2vw auto;
+		}
+	}
+}
+
+@keyframes bateau {
+    0% { transform: translateX(0) rotate(0);}
+    50% { transform: translateX(10px) rotate(-3Deg);}
+	0% { transform: translateX(0) rotate(0);}
 }
