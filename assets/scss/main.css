@@ -6737,7 +6737,7 @@ b, strong {
 .fs18 {
   font-size: 14px;
   line-height: 1;
-  font-weight: 400; }
+  font-weight: 500; }
   @media (min-width: 992px) {
     .fs18 {
       font-size: 0.938vw;
@@ -6750,7 +6750,7 @@ b, strong {
   @media (min-width: 992px) {
     .fs20 {
       font-size: 1.042vw;
-      line-height: 1.2; } }
+      line-height: 1.6; } }
 
 .fs24 {
   font-size: 20px;
@@ -6808,6 +6808,9 @@ b, strong {
 .mb-1vw {
   margin-bottom: 1vw; }
 
+.mb-2vw {
+  margin-bottom: 2vw; }
+
 .mb-3vw {
   margin-bottom: 3vw; }
 
@@ -6831,7 +6834,8 @@ b, strong {
   color: #fff; }
   .btn-primary:hover {
     background: #000;
-    color: #fff; }
+    color: #fff;
+    border-color: #000; }
 
 .libraire {
   position: absolute;
@@ -6845,7 +6849,6 @@ b, strong {
   border-radius: 10px;
   max-height: 39px;
   overflow: hidden;
-  transition: all 300ms linear;
   cursor: pointer; }
   @media (min-width: 992px) {
     .libraire {
@@ -6854,7 +6857,8 @@ b, strong {
       width: 10.938vw;
       padding: 1vw 1vw 0 1vw;
       border-radius: 1vw;
-      max-height: 3vw; } }
+      max-height: 3vw;
+      transition: all 300ms linear; } }
   @media (max-width: 991.98px) {
     .libraire.on {
       max-height: 100vh;
@@ -6917,6 +6921,59 @@ footer {
           margin: 0 0.5vw; } }
       footer .rs a:hover svg * {
         fill: #E16307; }
+
+body.page-template-insciption {
+  background: url("../img/carte-onepiece.jpg") top center;
+  background-size: 1950px;
+  /* illustration */ }
+  @media (min-width: 992px) {
+    body.page-template-insciption {
+      background-size: 100%; } }
+  body.page-template-insciption #sanji {
+    width: 615px;
+    left: 50%;
+    top: 345px;
+    transform: translateX(-59%); }
+    @media (min-width: 992px) {
+      body.page-template-insciption #sanji {
+        width: 21.927vw;
+        top: 10vw;
+        left: 7vw;
+        transform: translateX(0); } }
+    body.page-template-insciption #sanji img {
+      max-width: 100%; }
+  @media (min-width: 992px) {
+    body.page-template-insciption #jinbei {
+      display: block;
+      width: 29.844vw;
+      right: -5vw;
+      top: 12.6vw; } }
+  body.page-template-insciption #jinbei img {
+    max-width: 100%; }
+  @media (min-width: 992px) {
+    body.page-template-insciption .vague {
+      width: 9.896vw;
+      margin: 2vw 0; } }
+  body.page-template-insciption #forminscription .col-10.bg-white {
+    border-radius: 2vw;
+    box-shadow: 0px 0px 15px #0000004D; }
+    body.page-template-insciption #forminscription .col-10.bg-white form {
+      display: block;
+      border: 0.156vw solid #000;
+      margin: 2vw;
+      padding: 2vw 18.750vw; }
+      body.page-template-insciption #forminscription .col-10.bg-white form label {
+        font-size: 1.042vw; }
+      body.page-template-insciption #forminscription .col-10.bg-white form .form-control {
+        border: 0;
+        border-bottom: 1px solid #000;
+        border-radius: 0; }
+        body.page-template-insciption #forminscription .col-10.bg-white form .form-control:focus, body.page-template-insciption #forminscription .col-10.bg-white form .form-control.focus, body.page-template-insciption #forminscription .col-10.bg-white form .form-control.on {
+          border-color: #09BAD7; }
+      body.page-template-insciption #forminscription .col-10.bg-white form .position-relative label {
+        position: absolute;
+        top: 0;
+        left: 0; }
 
 .preload {
   position: fixed;
